@@ -27,7 +27,10 @@ exports.getComponent = function() {
     // connect to your database
     sql.connect(config, function (err) {
 
-        if (err) console.log(err);
+        if (err) {
+          	sql.close();
+          	console.log(err);
+        }
 
         // create Request object
         var request = new sql.Request();
