@@ -25,7 +25,6 @@ exports.getComponent = function() {
       return;
     }
     
-    
     // Read packets we need to process
     var data = input.getData('in');
     console.log("dataIn : " + data)
