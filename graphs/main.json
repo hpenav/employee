@@ -9,6 +9,25 @@
     "inports": {},
     "outports": {},
     "groups": [],
-    "processes": {},
-    "connections": []
+    "processes": {
+        "employee/SQLGrab_2p4q1": {
+            "component": "employee/SQLGrab",
+            "metadata": {
+                "label": "SQLGrab",
+                "x": 756,
+                "y": 324,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "data": "data",
+            "tgt": {
+                "process": "employee/SQLGrab_2p4q1",
+                "port": "in"
+            }
+        }
+    ]
 }
