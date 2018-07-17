@@ -34,7 +34,7 @@ exports.getComponent = function() {
         }).then(result => {
           let rows = result.recordset
           
-
+		  console.log(rows[1]);
           sql.close();
         }).catch(err => {
 
