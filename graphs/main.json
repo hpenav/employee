@@ -14,7 +14,17 @@
             "component": "employee/SQLGrab",
             "metadata": {
                 "label": "SQLGrab",
-                "x": 792,
+                "x": 828,
+                "y": 360,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "employee/ProcessData_weipg": {
+            "component": "employee/ProcessData",
+            "metadata": {
+                "label": "ProcessData",
+                "x": 972,
                 "y": 360,
                 "width": 72,
                 "height": 72
@@ -22,6 +32,17 @@
         }
     },
     "connections": [
+        {
+            "src": {
+                "process": "employee/SQLGrab_2p4q1",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "employee/ProcessData_weipg",
+                "port": "in"
+            },
+            "metadata": {}
+        },
         {
             "data": "SELECT * FROM Veritrax5.dbo.tblEvents",
             "tgt": {
