@@ -43,7 +43,7 @@ exports.getComponent = function() {
       });
     // Process data and send output
     output.send({
-      console.log("records total: " + rows);
+      console.log("records TOTAL: " + rows[1]);
       out: rows
     });
     // Deactivate
