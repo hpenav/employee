@@ -25,10 +25,9 @@ exports.getComponent = function() {
       return;
     }
     // connect to your database
-    sql.connect(config, function (err) {
+    var conn = sql.connect(config, function (err) {
 
         if (err) {
-          	sql.close();
           	console.log(err);
         }
 
@@ -46,6 +45,8 @@ exports.getComponent = function() {
         });
 
     });
+    conn.close();
+    
     // Read packets we need to process
     var data = input.getData('in');
     // Process data and send output
