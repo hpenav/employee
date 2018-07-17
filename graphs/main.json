@@ -14,8 +14,8 @@
             "component": "employee/SQLGrab",
             "metadata": {
                 "label": "SQLGrab",
-                "x": 720,
-                "y": 324,
+                "x": 864,
+                "y": 360,
                 "width": 72,
                 "height": 72
             }

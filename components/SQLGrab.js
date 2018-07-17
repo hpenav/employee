@@ -24,28 +24,18 @@ exports.getComponent = function() {
     if (!input.hasData('in')) {
       return;
     }
-    // connect to your database
-    var conn = sql.connect(config, function (err) {
-
-        if (err) {
-          	console.log(err);
-        }
-
-        // create Request object
-        var request = new sql.Request();
-
-        // query to the database and get the records
-        request.query('SELECT * FROM Veritrax5.dbo.tblEvents', function (err, cursor) {
-
-            if (err) console.log(err)
-
-            var totalSQLRecords = (cursor.recordsets[0].length);
-            console.log("totalRecords: " + totalSQLRecords);
-
-        });
-
+    new sql.ConnectionPool(config).connect().then(pool => {
+      return pool.request().query('SELECT * FROM Veritrax5.dbo.tblEvents')
+      }).then(result => {
+        let rows = result.recordset
+        console.log("records total: " + rows.length);
+        
+        sql.close();
+      }).catch(err => {
+        
+        sql.close();
+      });
     });
-    conn.close();
     
     // Read packets we need to process
     var data = input.getData('in');
