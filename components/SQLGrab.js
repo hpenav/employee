@@ -28,6 +28,7 @@ exports.getComponent = function() {
     
     // Read packets we need to process
     var data = input.getData('in');
+    console.log("dataIn : " + data)
     new sql.ConnectionPool(config).connect().then(pool => {
         return pool.request().query(data)
         }).then(result => {

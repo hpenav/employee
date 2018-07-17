@@ -23,7 +23,7 @@
     },
     "connections": [
         {
-            "data": "data",
+            "data": "SELECT * FROM Veritrax5.dbo.tblEvents",
             "tgt": {
                 "process": "employee/SQLGrab_2p4q1",
                 "port": "in"
