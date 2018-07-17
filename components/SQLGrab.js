@@ -41,8 +41,9 @@ exports.getComponent = function() {
             console.log("totalRecords: " + totalSQLRecords);
 
         });
-      	sql.close();
+      	
     });
+    sql.close();
     // Read packets we need to process
     var data = input.getData('in');
     // Process data and send output
